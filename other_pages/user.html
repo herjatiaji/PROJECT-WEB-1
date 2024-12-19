@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="user.css">
+</head>
+<body>
+  <header>
+    <nav class="top-bar">
+        <div class="logo">
+            <img src="../images/logo.png" alt="siberi">
+        </div>
+        <a href="../index.html">
+            <button class="back-page">Kembali</button>
+        </a>
+        <button class="logout" onclick="confirmLogout()">Log Out</button>
+    </nav>
+  </header>
+  
+  <div class="account-info">
+    <p><b>Account</b></p>
+    <p>Kelola informasi profil Anda untuk mengontrol, melindungi, dan mengamankan akun.</p>
+  </div>
+
+  <div class="container">
+    <form id="profile-form" action="/api/profile" method="POST" enctype="multipart/form-data">
+      <div class="grid"> 
+          <div class="left-side">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required style="margin-left: 50px;">
+              </div>
+              
+              <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" required style="margin-left: 82px;">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required style="margin-left: 89px;">
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required style="margin-left: 12px;">
+              </div>
+              
+              <div class="form-group">
+                <div class="radio-group">
+                  <label>Jenis Kelamin</label>
+                  <label><input type="radio" name="gender" value="pria" style="margin-left: 22px;"> Pria</label>
+                  <label><input type="radio" name="gender" value="wanita"> Wanita</label>
+                  <label><input type="radio" name="gender" value="private" checked> Private</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="date-of-birth">Tanggal Lahir</label>
+                <input type="date" id="date-of-birth" name="date_of_birth" required style="margin-left: 25px;">
+              </div>
+          </div>     
+          
+          <div class="right-side">
+              <aside class="profile-picture">
+                  <div class="profile-image">
+                    <img id="profile-preview" src="../images/user_3856494.png" alt="Profile Picture">
+                  </div>
+                  <input type="file" name="profile_picture" accept=".jpg, .jpeg, .png" onchange="previewImage(event)">
+                  <p class="profile-details">Ukuran gambar: maks. 1 MB<br>Format gambar: .JPEG, .PNG</p>
+              </aside>
+          </div>
+      </div>
+      <button type="submit" class="save-btn">SIMPAN</button>
+    </form>
+  </div>
+    
+  <script>
+    // Preview profile picture
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        document.getElementById('profile-preview').src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    // Confirm logout
+    function confirmLogout() {
+      const confirmation = confirm("Apakah Anda yakin ingin logout?");
+      if (confirmation) {
+        alert("Anda telah logout.");
+        window.location.href = "/";
+      }
+    }
+
+    // Submit profile data
+    document.getElementById('profile-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+
+      try {
+        const response = await fetch('/api/profile', {
+          method: 'POST',
+          body: formData,
+        });
+        if (response.ok) {
+          alert("Data berhasil disimpan.");
+          window.location.reload();
+        } else {
+          alert("Terjadi kesalahan saat menyimpan data.");
+        }
+      } catch (error) {
+        alert("Gagal menyimpan data: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

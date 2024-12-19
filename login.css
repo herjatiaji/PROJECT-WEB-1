@@ -1,0 +1,183 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+/* Reset dan Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f5e6;
+  background-image: url("./images/perpuss.png"); /* Ganti path jika perlu */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Kontainer Utama */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Membagi dua kolom */
+  gap: 100px;
+  padding-top: 50px;
+  padding-left: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+}
+
+/* Bagian Top Header */
+.top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top-nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.top-nav a:hover {
+  color: #153448;
+}
+
+/* Bagian Kiri (Deskripsi) */
+.left-section {
+  flex: 1;
+  padding: 40px;
+  padding-top: 70px;
+  color: #f5ecdf;
+  text-align: left;
+}
+
+.left-section .logo {
+  padding-left: 150px;
+}
+
+.left-section .welcome-text {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.left-section .description {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.left-section .details {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+/* Bagian Kanan (Formulir) */
+.right-section {
+  flex: 1;
+  background-color: #dfd0b8;
+  border-radius: 17px;
+  padding: 30px;
+  width: 448px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style untuk Label dan Input */
+.form-layout label {
+  display: block;
+  margin-bottom: 5px; /* Memberikan jarak antara label dan input */
+  font-weight: bold;
+  color: #3b3b3b;
+}
+
+.form-layout input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 15px; /* Jarak antar input */
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #00509e; /* Warna border saat fokus */
+  box-shadow: 0 0 5px rgba(0, 80, 158, 0.5); /* Highlight fokus */
+}
+
+/* Style untuk Tombol Submit */
+.submit-btn {
+  display: block;
+  margin: 20px auto 0;
+  width: 100%; /* Lebar tombol mengikuti form */
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #003366;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  background-color: #00509e;
+}
+
+.submit {
+  text-align: center;
+}
+
+/* Custom Divider */
+.divider {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #777;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #777;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #eaeaea;
+    background-image: url("../images/5134336.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #153448;
+    color: #f5f5f5;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+.top-bar .logo img{
+    margin-right: 980px;
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    padding-left: 30px;
+}
+
+.top-bar .back-page {
+    background-color: #DFD0B8;
+    color: #153448;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center; 
+    margin-right: 30px;
+}
+
+.top-bar .back-page:hover {
+    color: #ffffff;
+    background-color: #153448;
+}
+
+.top-bar .logout {
+    background-color: #DFD0B8;
+    color: #153448;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    width: 95px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.top-bar .logout:hover {
+    color: #ffffff;
+    background-color: #153448;
+}
+
+.account-info {
+    padding-top: 100px;
+    padding-left: 182px;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    background-color: #fff;
+    width: 1000px;
+    height: 400px;
+    padding: 40px 40px;
+  }
+
+  .left-side {
+    padding-left: 5px;
+    line-height: 2.5;
+  }
+  
+  .right-side {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 100px;
+  }
+
+  .profile-name {
+    height: 25px;
+    width: 100px;
+    border: 1px solid #666;
+    font-size: 14px;
+    margin-left: 153px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .profile-name:hover {
+    color: #ffffff;
+    background-color: #153448;
+  }
+
+  .profile-details {
+    color: lightgrey;
+  }
+
+  .save-btn {
+    background-color: #153448;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 400px;
+  }
+
+  .save-btn:hover {
+    color: #153448;
+    background-color: #DFD0B8; 
+  }
